@@ -11,7 +11,7 @@ const StyledLogo = styled.div`
 
   font-family: "Gloock", serif;
   font-size: ${({ size }) => (size ? size : "1.75rem")};
-  font-weight: 600;
+  font-weight: 900;
   color: ${({ theme, color }) => theme.colors[color] || color};
 
   /* Disable effects when sidebar is open */
