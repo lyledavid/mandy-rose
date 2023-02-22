@@ -5,7 +5,6 @@ import "fontsource-roboto/400.css"
 import "fontsource-roboto/700.css"
 
 import { lightTheme, darkTheme } from "../styles/theme"
-import { useDarkMode } from "../hooks"
 import Context from "../context"
 import GlobalStyle from "../styles/globalStyle"
 import Header from "./header"
@@ -31,8 +30,7 @@ const StyledLayoutWrapper = styled.div`
 const Layout = ({ children }) => {
   const { isIntroDone } = useContext(Context).state
   // Enables dark mode if the user's OS has an active dark theme
-  const darkModeEnabled = useDarkMode()
-  const theme = darkModeEnabled ? darkTheme : lightTheme
+  const theme = lightTheme
 
   return (
     <StyledLayoutWrapper id="layout-wrapper" data-useCookieBar={useCookieBar}>

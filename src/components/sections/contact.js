@@ -8,7 +8,6 @@ import { motion } from "framer-motion"
 import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
-import Social from "../social"
 
 const StyledSection = styled(motion.section)`
   width: 100%;
@@ -93,7 +92,6 @@ const Contact = ({ content }) => {
             </a>
           </div>
         </div>
-        <Social width="9rem" padding="0.5rem 1.25rem" withIcon />
       </StyledContentWrapper>
     </StyledSection>
   )
