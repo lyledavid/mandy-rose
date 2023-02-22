@@ -21,6 +21,7 @@ module.exports = {
       text: "#000000",
       subtext: "#555555",
       background: "#FFFFFF",
+      secondaryBackground: "#ffeef2",
       card: "#FFFFFF",
       scrollBar: "rgba(0, 0, 0, 0.5)",
       boxShadow: "rgba(0, 0, 0, 0.16)",
