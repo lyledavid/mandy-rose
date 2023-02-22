@@ -8,7 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
-import Social from "../social"
+
 import { lightTheme, darkTheme } from "../../styles/theme"
 
 const StyledSection = styled.section`
@@ -133,9 +133,6 @@ const Hero = ({ content }) => {
           <div className="description">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
         </motion.div>
       </StyledContentWrapper>
     </StyledSection>
