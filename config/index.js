@@ -96,6 +96,12 @@ module.exports = {
         url: "/#launch",
       },
     ],
+    button: {
+      useFileName: false,
+      name: "Buy",
+      fileName: "", // the file has to be placed inside the static folder at the root level
+      url: "https://www.amazon.com/Belonged-Mandy-Rose-ebook/dp/B0BTC54PYV", // if useFileName=false, you can set an anchor link here and use the button for navigational purposes
+    },
   },
   footerLinks: [
     {

@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   const theme = lightTheme
 
   return (
-    <StyledLayoutWrapper id="layout-wrapper" data-useCookieBar={useCookieBar}>
+    <StyledLayoutWrapper id="layout-wrapper" data-usecookiebar={useCookieBar}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {isIntroDone ? (

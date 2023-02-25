@@ -68,7 +68,7 @@ const StyledNav = styled.nav`
     font-size: 1.5rem;
     border-radius: ${({ theme }) => theme.borderRadius};
     border: 0.125rem solid ${({ theme }) => theme.colors.primary};
-    background: ${({ theme }) => theme.colors.background};
+    background: #f7d2d7;
   }
 `
 
@@ -88,6 +88,25 @@ const Sidebar = ({ open, setOpen }) => {
               {name}
             </Link>
           ))}
+          {button.useFileName ? (
+            <a
+              className="cta-btn"
+              href={`/${button.fileName}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(!open)}
+            >
+              {button.name}
+            </a>
+          ) : (
+            <Link
+              className="cta-btn"
+              to={button.url}
+              onClick={() => setOpen(!open)}
+            >
+              {button.name}
+            </Link>
+          )}
         </StyledNav>
       </StyledContainer>
       <StyledBackdrop open={open} />

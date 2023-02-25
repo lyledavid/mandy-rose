@@ -64,6 +64,20 @@ const Navbar = () => {
           </Link>
         )
       })}
+      {button.useFileName ? (
+        <a
+          className="cta-btn"
+          href={`/${button.fileName}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {button.name}
+        </a>
+      ) : (
+        <Link className="cta-btn" to={button.url}>
+          {button.name}
+        </Link>
+      )}
     </StyledNav>
   )
 }

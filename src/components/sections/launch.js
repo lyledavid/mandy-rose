@@ -89,6 +89,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .subtext {
       font-size: 16px;
+      text-align: end;
     }
   }
 `
@@ -140,18 +141,20 @@ const Launch = ({ content }) => {
           <div className="text-content">
             <p>Meet me at my official book launch!</p>
             <table>
-              <tr>
-                <td className="t-head">Date</td>
-                <td>5 March</td>
-              </tr>
-              <tr>
-                <td className="t-head">Time</td>
-                <td>14h00 to 16h00</td>
-              </tr>
-              <tr>
-                <td className="t-head">Venue</td>
-                <td><p className="m-0">27 Meridian Drive</p><p className="m-0">Umhlanga Rocks</p><p className="m-0">Opposite Zebbies Lighting</p></td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="t-head">Date</td>
+                  <td>5 March</td>
+                </tr>
+                <tr>
+                  <td className="t-head">Time</td>
+                  <td>14h00 to 16h00</td>
+                </tr>
+                <tr>
+                  <td className="t-head">Venue</td>
+                  <td><p className="m-0">27 Meridian Drive</p><p className="m-0">Umhlanga Rocks</p><p className="m-0">Opposite Zebbies Lighting</p></td>
+                </tr>
+              </tbody>
             </table>
             <p className="subtext">Light snacks will be served</p>
           </div>
