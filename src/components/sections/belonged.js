@@ -60,6 +60,59 @@ const StyledContentWrapper = styled(ContentWrapper)`
         box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
       }
     }
+    blockquote {
+      margin: 0 auto;
+      padding: 1em;
+      border-left: 3px solid #ddd;
+    }
+    blockquote:before {
+      display: none;
+    }
+    blockquote:not(:first-of-type) {
+      margin-top: .5em;
+    }
+    blockquote p {
+      color: #555;
+      font-size: 12pt;
+      line-height: 1.4;
+      font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+    }
+    blockquote footer {
+      margin-top: .5em;
+      padding: 0;
+      color: #777;
+      font-size: 12pt;
+      text-align: left;
+      font-style: italic;
+    }
+    blockquote footer:before {
+      content: '— ';
+    }
+    blockquote:nth-of-type(even) {
+      text-align: right;
+      border-left: none;
+      border-right: 3px solid #ddd;
+    }
+    blockquote:nth-of-type(even) footer {
+      text-align: right;
+    }
+    blockquote:nth-of-type(even) footer:before {
+      content: '';
+    }
+    blockquote:nth-of-type(even) footer:after {
+      content: ' —';
+    }
+    @element 'blockquote' and (min-width: 300px) {
+      blockquote {
+        padding: 1em 20% 1em 1em;
+      }
+      blockquote p {
+        font-size: 14pt;
+      }
+      blockquote:nth-of-type(even) {
+        padding: 1em 1em 1em 20%;
+      }
+    }
   }
 `
 
@@ -108,6 +161,14 @@ const Belonged = ({ content }) => {
           <div className="text-content">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
+          <blockquote>
+          <p><q>Captivating and compelling, a book with twists and turns.</q></p>
+          <footer>Melisha Francis</footer>
+        </blockquote>
+        <blockquote>
+          <p><q>Page turner, intriguing and deftly written...</q></p>
+          <footer>Beverly Gengiah</footer>
+        </blockquote>
         </motion.div>
       </StyledContentWrapper>
     </StyledSection>

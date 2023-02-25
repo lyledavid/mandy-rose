@@ -118,7 +118,7 @@ const Launch = ({ content }) => {
 
   return (
     <StyledSection id="launch">
-      <StyledContentWrapper style={{ backgroundImage: `url(${mapBackground})`, paddingBottom: 40 }}>
+      <StyledContentWrapper style={{ backgroundImage: `url(${mapBackground})`, paddingBottom: 40, marginTop: 40 }}>
       <motion.div
           className="header-wrapper"
           ref={iRef}
