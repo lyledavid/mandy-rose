@@ -9,11 +9,13 @@ import Hero from "../components/sections/hero"
 import About from "../components/sections/about"
 import Projects from "../components/sections/projects"
 import Contact from "../components/sections/contact"
+import Launch from "../components/sections/launch"
 import { seoTitleSuffix } from "../../config"
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.index.edges[0].node
   const { seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
+  console.log('index page');
 
   const globalState = {
     // if useSplashScreen=false, we skip the intro by setting isIntroDone=true
@@ -33,13 +35,13 @@ const IndexPage = ({ data }) => {
               : `${seoTitle}`
           }
         />
-        <Hero content={data.hero.edges} />
+        {/* <Hero content={data.hero.edges} /> */}
         {/* Articles is populated via Medium RSS Feed fetch */}
         {/* <Articles /> */}
         <About content={data.about.edges} />
         {/* <Interests content={data.interests.edges} /> */}
         <Projects content={data.projects.edges} />
-        <Contact content={data.contact.edges} />
+        <Launch content={data.launch.edges} />
       </Layout>
     </GlobalStateProvider>
   )
@@ -60,26 +62,6 @@ export const pageQuery = graphql`
             seoTitle
             useSeoTitleSuffix
             useSplashScreen
-          }
-        }
-      }
-    }
-    hero: allMdx(filter: { fileAbsolutePath: { regex: "/index/hero/" } }) {
-      edges {
-        node {
-          body
-          frontmatter {
-            greetings
-            title
-            subtitlePrefix
-            subtitle
-            icon {
-              childImageSharp {
-                fluid(maxWidth: 60, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }
@@ -128,6 +110,38 @@ export const pageQuery = graphql`
     projects: allMdx(
       filter: {
         fileAbsolutePath: { regex: "/index/projects/" }
+        frontmatter: { visible: { eq: true } }
+      }
+      sort: { fields: [frontmatter___position], order: ASC }
+    ) {
+      edges {
+        node {
+          body
+          frontmatter {
+            title
+            category
+            emoji
+            external
+            github
+            screenshot {
+              childImageSharp {
+                fluid(maxWidth: 400, quality: 90) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            tags
+            position
+            buttonVisible
+            buttonUrl
+            buttonText
+          }
+        }
+      }
+    }
+    launch: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/index/launch/" }
         frontmatter: { visible: { eq: true } }
       }
       sort: { fields: [frontmatter___position], order: ASC }

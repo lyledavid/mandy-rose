@@ -8,11 +8,12 @@ import { motion } from "framer-motion"
 import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
+import mapBackground from "../../../content/map.png"
+import mandy from "../../../content/mandy_1.jpg"
 
 const StyledSection = styled(motion.section)`
   width: 100%;
   height: auto;
-  background: ${({ theme }) => theme.colors.background};
   margin-top: 6rem;
   display: flex;
   justify-content: center;
@@ -76,9 +77,16 @@ const Contact = ({ content }) => {
       variants={variants}
       animate={onScreen ? "visible" : "hidden"}
     >
-      <StyledContentWrapper>
-        <h3>{frontmatter.title}</h3>
-        <MDXRenderer>{body}</MDXRenderer>
+      <StyledContentWrapper style={{ backgroundImage: `url(${mapBackground})` }}>
+        <div>
+          <span className="circle-image">
+            <img src={mandy} alt="Mandy Rose" height={300} />
+          </span>
+          <div>
+            <h3>{frontmatter.title}</h3>
+            <MDXRenderer>{body}</MDXRenderer>
+          </div>
+        </div>
         <div className="profile">
           <Img
             className="avatar"

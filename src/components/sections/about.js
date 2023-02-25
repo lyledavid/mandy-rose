@@ -8,6 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
+import mandy from "../../../content/mandy_2.jpg"
 
 const StyledSection = styled.section`
   width: 100%;
@@ -40,6 +41,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       max-width: 31.25rem;
     }
     .image-content {
+      display: flex;
+      justify-content: center;
       width: 100%;
       max-width: 18rem;
       margin-top: 4rem;
@@ -87,28 +90,15 @@ const About = ({ content }) => {
   return (
     <StyledSection id="about">
       <StyledContentWrapper>
-        <motion.div
-          className="inner-wrapper"
-          ref={tRef}
-          initial={{ opacity: 0, y: 20 }}
-          animate={tControls}
-        >
+        <div className="image-content">
+          <img className="about-author" src={mandy} alt="Mandy Rose" height={300} />
+        </div>
+        <div>
           <h3 className="section-title">{frontmatter.title}</h3>
           <div className="text-content">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
-        </motion.div>
-        <motion.div
-          className="image-content"
-          ref={iRef}
-          initial={{ opacity: 0, x: 20 }}
-          animate={iControls}
-        >
-          <Img
-            className="about-author"
-            fluid={frontmatter.image.childImageSharp.fluid}
-          />
-        </motion.div>
+        </div>
       </StyledContentWrapper>
     </StyledSection>
   )
