@@ -118,15 +118,25 @@ const Launch = ({ content }) => {
   return (
     <StyledSection id="launch">
       <StyledContentWrapper style={{ backgroundImage: `url(${mapBackground})`, paddingBottom: 40 }}>
-        <div className="header-wrapper">
+      <motion.div
+          className="header-wrapper"
+          ref={iRef}
+          initial={{ opacity: 0, x: 20 }}
+          animate={iControls}
+        >
         <h3 className="section-title">{frontmatter.title}</h3>
         <div className="image-wrapper">
           <div className="circle-image">
             <img src={mandy} alt="Mandy Rose" height={300} />
           </div>
         </div>
-        </div>
-        <div className="text-wrapper">
+        </motion.div>
+        <motion.div
+          className="text-wrapper"
+          ref={tRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={tControls}
+        >
           <div className="text-content">
             <p>Meet me at my official book launch!</p>
             <table>
@@ -145,7 +155,7 @@ const Launch = ({ content }) => {
             </table>
             <p className="subtext">Light snacks will be served</p>
           </div>
-        </div>
+        </motion.div>
       </StyledContentWrapper>
     </StyledSection>
   )

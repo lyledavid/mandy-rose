@@ -5,10 +5,8 @@ import { graphql } from "gatsby"
 import GlobalStateProvider from "../context/provider"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hero from "../components/sections/hero"
 import About from "../components/sections/about"
 import Belonged from "../components/sections/belonged"
-import Contact from "../components/sections/contact"
 import Launch from "../components/sections/launch"
 import { seoTitleSuffix } from "../../config"
 
@@ -35,11 +33,7 @@ const IndexPage = ({ data }) => {
               : `${seoTitle}`
           }
         />
-        {/* <Hero content={data.hero.edges} /> */}
-        {/* Articles is populated via Medium RSS Feed fetch */}
-        {/* <Articles /> */}
         <About content={data.about.edges} />
-        {/* <Interests content={data.interests.edges} /> */}
         <Belonged content={data.belonged.edges} />
         <Launch content={data.launch.edges} />
       </Layout>
