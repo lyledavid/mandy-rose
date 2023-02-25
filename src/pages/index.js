@@ -100,34 +100,19 @@ export const pageQuery = graphql`
         }
       }
     }
-    launch: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/index/launch/" }
-        frontmatter: { visible: { eq: true } }
-      }
-      sort: { fields: [frontmatter___position], order: ASC }
-    ) {
+    launch: allMdx(filter: { fileAbsolutePath: { regex: "/index/launch/" } }) {
       edges {
         node {
           body
           frontmatter {
             title
-            category
-            emoji
-            external
-            github
-            screenshot {
+            image {
               childImageSharp {
                 fluid(maxWidth: 400, quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            tags
-            position
-            buttonVisible
-            buttonUrl
-            buttonText
           }
         }
       }

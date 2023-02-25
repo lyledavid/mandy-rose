@@ -93,7 +93,7 @@ module.exports = {
       },
       {
         name: "Book Launch",
-        url: "/#contact",
+        url: "/#launch",
       },
     ],
   },

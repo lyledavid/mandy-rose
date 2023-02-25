@@ -88,14 +88,14 @@ const Belonged = ({ content }) => {
   return (
     <StyledSection id="belonged">
       <StyledContentWrapper>
+        <h3 className="section-title">{frontmatter.title}</h3>
+        <div className="image-content">
+          <img className="about-author" src={belonged} alt="Belonged" height={300} />
+        </div>
         <div>
-          <h3 className="section-title">{frontmatter.title}</h3>
           <div className="text-content">
             <MDXRenderer>{body}</MDXRenderer>
           </div>
-        </div>
-        <div className="image-content">
-          <img className="about-author" src={belonged} alt="Belonged" height={300} />
         </div>
       </StyledContentWrapper>
     </StyledSection>

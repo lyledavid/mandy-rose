@@ -15,7 +15,6 @@ const StyledFooter = styled.footer`
     darkMode ? theme.colors.background : theme.colors.primary};
   border-top: ${({ theme, darkMode }) =>
     darkMode ? `3px solid ${theme.colors.boxShadowHover}` : null};
-  margin-top: 10rem;
 `
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -23,7 +22,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     .footer-links {
       /* Adjust width of links wrapper accordingly */
@@ -59,13 +58,6 @@ const Footer = () => {
             }
           />
         </Link>
-        <div className="footer-links" data-testid="footer-links">
-          {footerLinks.map(({ name, url }, key) => (
-            <StyledLink key={key} to={url} $darkMode={darkMode}>
-              {name}
-            </StyledLink>
-          ))}
-        </div>
       </StyledContentWrapper>
     </StyledFooter>
   )
