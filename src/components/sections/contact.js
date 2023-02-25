@@ -9,7 +9,7 @@ import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/contentWrapper"
 import Underlining from "../../styles/underlining"
 import mapBackground from "../../../content/map.png"
-import mandy from "../../../content/mandy_1.jpg"
+import mandy from "../../../content/mandy1.jpg"
 
 const StyledSection = styled(motion.section)`
   width: 100%;

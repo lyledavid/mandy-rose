@@ -8,7 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
-import mandy from "../../../content/mandy_1.jpg"
+import mandy from "../../../content/mandy1.jpg"
 import mapBackground from "../../../content/map.png"
 
 const StyledSection = styled.section`

@@ -8,7 +8,7 @@ import { motion, useAnimation } from "framer-motion"
 import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
-import mandy from "../../../content/mandy_2.jpg"
+import mandy from "../../../content/mandy2.jpg"
 
 const StyledSection = styled.section`
   width: 100%;
