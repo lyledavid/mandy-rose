@@ -5,8 +5,8 @@ import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion, useAnimation } from "framer-motion"
 
-import { useOnScreen } from "../../hooks/"
-import Context from "../../context/"
+import { useOnScreen } from "../../hooks"
+import Context from "../../context"
 import ContentWrapper from "../../styles/contentWrapper"
 import belonged from "../../../content/belonged.jpg"
 
@@ -54,10 +54,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .about-author {
       border-radius: ${({ theme }) => theme.borderRadius};
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
-      filter: grayscale(20%) contrast(1) brightness(90%);
       transition: all 0.3s ease-out;
       &:hover {
-        filter: grayscale(50%) contrast(1) brightness(90%);
         transform: translate3d(0px, -0.125rem, 0px);
         box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
       }
@@ -65,7 +63,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const Projects = ({ content }) => {
+const Belonged = ({ content }) => {
   const { frontmatter, body } = content[0].node
   const { isIntroDone } = useContext(Context).state
   const tControls = useAnimation()
@@ -88,7 +86,7 @@ const Projects = ({ content }) => {
   }, [isIntroDone, tControls, iControls, tOnScreen, iOnScreen])
 
   return (
-    <StyledSection id="projects">
+    <StyledSection id="belonged">
       <StyledContentWrapper>
         <div>
           <h3 className="section-title">{frontmatter.title}</h3>
@@ -104,7 +102,7 @@ const Projects = ({ content }) => {
   )
 }
 
-Projects.propTypes = {
+Belonged.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
@@ -115,4 +113,4 @@ Projects.propTypes = {
   ).isRequired,
 }
 
-export default Projects
+export default Belonged

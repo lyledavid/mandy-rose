@@ -89,7 +89,7 @@ module.exports = {
       },
       {
         name: "Belonged",
-        url: "/#projects",
+        url: "/#belonged",
       },
       {
         name: "Book Launch",

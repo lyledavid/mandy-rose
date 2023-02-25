@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/sections/hero"
 import About from "../components/sections/about"
-import Projects from "../components/sections/projects"
+import Belonged from "../components/sections/belonged"
 import Contact from "../components/sections/contact"
 import Launch from "../components/sections/launch"
 import { seoTitleSuffix } from "../../config"
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
         {/* <Articles /> */}
         <About content={data.about.edges} />
         {/* <Interests content={data.interests.edges} /> */}
-        <Projects content={data.projects.edges} />
+        <Belonged content={data.belonged.edges} />
         <Launch content={data.launch.edges} />
       </Layout>
     </GlobalStateProvider>
@@ -83,31 +83,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    interests: allMdx(
-      filter: { fileAbsolutePath: { regex: "/index/interests/" } }
-    ) {
-      edges {
-        node {
-          exports {
-            shownItems
-            interests {
-              name
-              icon {
-                childImageSharp {
-                  fixed(width: 20, height: 20, quality: 90) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
-            }
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-    projects: allMdx(filter: { fileAbsolutePath: { regex: "/index/projects/" } }) {
+    belonged: allMdx(filter: { fileAbsolutePath: { regex: "/index/belonged/" } }) {
       edges {
         node {
           body
