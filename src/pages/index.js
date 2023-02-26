@@ -13,7 +13,6 @@ import { seoTitleSuffix } from "../../config"
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.index.edges[0].node
   const { seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
-  console.log('index page');
 
   const globalState = {
     // if useSplashScreen=false, we skip the intro by setting isIntroDone=true
@@ -66,30 +65,18 @@ export const pageQuery = graphql`
           body
           frontmatter {
             title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }
     }
-    belonged: allMdx(filter: { fileAbsolutePath: { regex: "/index/belonged/" } }) {
+    belonged: allMdx(
+      filter: { fileAbsolutePath: { regex: "/index/belonged/" } }
+    ) {
       edges {
         node {
           body
           frontmatter {
             title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }
@@ -100,13 +87,6 @@ export const pageQuery = graphql`
           body
           frontmatter {
             title
-            image {
-              childImageSharp {
-                fluid(maxWidth: 400, quality: 90) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }

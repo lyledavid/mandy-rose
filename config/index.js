@@ -3,8 +3,7 @@ module.exports = {
   author: "SEMAPHORE",
   siteTitle: "Mandy Rose Portfolio",
   siteShortTitle: "Mandy Rose", // Used as logo text in header, footer, and splash screen
-  siteDescription:
-    "Mandy Rose - Author",
+  siteDescription: "Mandy Rose - Author",
   siteUrl: "http://www.mandyrosebooks.com/",
   siteLanguage: "en_US",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
@@ -84,7 +83,7 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "About Me",
+        name: "About",
         url: "/#about",
       },
       {
